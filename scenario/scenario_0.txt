@@ -1,0 +1,5 @@
+1|(4, 3)|()|2|100|explorer pic de Bhanborim
+2|(3, 1)|((1,),)|1|150|dialoguer avec Kaela la chaman des esprits
+3|(0, 4)|((2,),)|3|200|explorer palais de Ahehona
+4|(3, 2)|((2,),)|6|100|vaincre Loup Géant
+0|(1, 1)|((3,4),)|4|350|vaincre Araignée lunaire
