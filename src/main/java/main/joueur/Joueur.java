@@ -15,6 +15,10 @@ public class Joueur {
     }
 
 
+    /**
+     * Methode qui definit l'experience du joueur
+     *@param parExperience int, l'experience du joueur
+     */
     public static void setExperience(int parExperience) {
         Joueur.experience = parExperience;
     }
