@@ -1,0 +1,8 @@
+2|(4, 6)|((3,),)|1|100|vaincre Yéti
+7|(3, 4)|((3, 2),)|1|150|dialoguer avec Raven le corbeau de la magie noire
+5|(4, 3)|((3,), (2, 7))|8|200|explorer désolation de Khbel
+1|(0, 5)|()|3|100|explorer plaine de Namrhia
+4|(6, 3)|((6,), (7, 3))|6|200|explorer pic de Nigh Todir
+3|(5, 5)|((1,),)|5|150|vaincre Vavaki
+6|(4, 0)|((1, 2),)|4|50|vaincre Wikkawak
+0|(5, 1)|((4,),)|8|650|explorer cascade de Irma Lenora

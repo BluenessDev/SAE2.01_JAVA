@@ -1,0 +1,10 @@
+1|(2, 0)|((9,), (7,))|10|150|explorer lac de Yeel Themar
+2|(8, 0)|((9,), (5,))|3|50|vaincre Lorelei
+5|(7, 1)|((7,),)|6|50|vaincre Tortue de mer
+3|(9, 9)|()|5|50|vaincre Renard
+6|(4, 6)|((9,),)|7|100|vaincre Géant du feu
+8|(1, 2)|((3,),)|4|200|explorer tombeau de Thylena Dorei
+9|(9, 8)|()|3|50|explorer bastion de Nyhalenora
+7|(5, 9)|((3,),)|4|150|dialoguer avec Orion le chasseur de comètes
+4|(7, 4)|((1, 9),)|6|300|dialoguer avec Rhiannon la forgeronne des armes divines
+0|(8, 9)|((9,), (7,))|12|900|explorer forteresse de Bhenheim

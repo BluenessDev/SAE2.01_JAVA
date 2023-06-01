@@ -1,0 +1,12 @@
+4|(16, 5)|((10,), (2, 8))|3|150|dialoguer avec Elric le sorcier des tempêtes
+3|(16, 10)|((10,), (4,))|9|250|vaincre Qallupilluk
+5|(20, 16)|((6,),)|8|250|explorer porte de Mythalian
+9|(19, 21)|((10, 5),)|11|300|vaincre Div
+2|(10, 7)|((8,),)|5|50|vaincre Serpent d'eau
+6|(18, 14)|((2, 4),)|9|100|explorer bois de Kum Faldir
+10|(19, 3)|()|1|100|dialoguer avec Osiris le dieu des morts-vivants
+11|(1, 9)|((3, 2),)|6|300|explorer chateau de Mathalona
+7|(0, 1)|((2, 4),)|11|200|vaincre Ours-hibou
+8|(9, 19)|()|0|0|explorer temple de Naghguruhm
+1|(2, 4)|((2, 10),)|4|200|explorer cimetière de Thilal Taesi
+0|(22, 9)|((11, 3),)|8|1500|vaincre Saguaroi

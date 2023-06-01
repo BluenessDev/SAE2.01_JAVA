@@ -1,0 +1,19 @@
+18|(16, 6)|((2, 16),)|1|100|vaincre Géant du feu
+2|(37, 21)|()|4|100|vaincre Loup sanguinaire
+4|(17, 17)|((2, 3), (16, 7))|5|150|vaincre Marcheur ténébreux
+17|(87, 35)|((16, 10),)|6|350|dialoguer avec Kian le bretteur solitaire
+11|(84, 73)|((18,), (10, 9))|6|300|explorer grotte de Jaathhona
+6|(96, 72)|((12,),)|8|250|explorer pic de Ilyansari
+7|(84, 96)|()|3|0|explorer désolation de Orkiggerd
+9|(97, 24)|((4, 7),)|6|100|dialoguer avec Lirien le poète des temps anciens
+14|(82, 30)|((9,), (5, 10))|8|300|vaincre Élémentaire de la glace de taille P
+1|(52, 6)|((9, 3), (8,))|12|350|explorer cascade de Nilvehona
+5|(18, 61)|((4,), (7, 3))|3|150|vaincre Araignée géante démoniaque
+13|(77, 87)|((5, 3),)|5|250|vaincre Camérocéras
+12|(30, 68)|((18,),)|5|200|explorer forteresse de Khumria
+15|(8, 0)|((7, 18), (10, 12))|3|250|dialoguer avec Isadora la prophétesse des rêves
+8|(14, 22)|((18,),)|7|250|vaincre Scorpion noir
+16|(2, 74)|((2,),)|1|50|explorer lagon de Agrul Dhel
+3|(9, 70)|()|1|100|explorer chateau de Bigh Taruhm
+10|(84, 25)|((4,),)|4|250|explorer complexe de Vrudh Radoz
+0|(6, 85)|((18,), (3,))|4|350|explorer caverne de Orkiggerd

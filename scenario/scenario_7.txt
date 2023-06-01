@@ -1,0 +1,13 @@
+11|(35, 85)|((3, 1),)|8|250|explorer bois de Golfarum
+6|(40, 113)|((7,),)|7|350|vaincre Nécrophage des glaces
+4|(40, 31)|((3,), (11,))|10|250|explorer repaire de Chogud
+7|(107, 12)|()|5|0|explorer planque de Chalguzzadh
+10|(99, 96)|((9, 12),)|18|650|explorer pic de Domdun
+8|(133, 106)|((4, 9), (5, 1))|22|450|vaincre Traqueur gluant
+5|(7, 32)|((9, 3), (11,))|10|300|explorer planque de Broggudh Dogh
+1|(113, 118)|((3,),)|4|150|explorer plaine de Allalsera
+12|(114, 12)|((4, 5), (3,))|10|400|vaincre Shinigami
+2|(117, 114)|((4, 12), (8, 5))|21|550|explorer tombeau de Agh Valzurd
+9|(40, 51)|((11, 1),)|7|350|dialoguer avec Kali la chasseresse de démons
+3|(32, 10)|((7,),)|2|150|dialoguer avec Niamh la fée de la forêt
+0|(130, 125)|((11,), (8, 5))|26|3000|vaincre Élémentaire de la glace noble

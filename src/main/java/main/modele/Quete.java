@@ -1,6 +1,8 @@
 package main.modele;
 
-import java.util.Scanner;
+import main.joueur.Joueur;
+
+import java.util.*;
 
 public class Quete {
     int numero;
@@ -17,6 +19,11 @@ public class Quete {
     int experience;
     String intitule;
 
+    /**
+     * Constructeur de la classe Quete
+     * @param ligne : ligne du fichier texte scenario_telnombre.txt
+     * @return void
+     */
     public Quete(String ligne) {
         Scanner scanner = new Scanner(ligne).useDelimiter("\\|");
         while(scanner.hasNext()) {
@@ -49,6 +56,10 @@ public class Quete {
         }
     }
 
+    /**
+     * Methode qui verifie si la quete n'a aucune precondition
+     * @return true si la quete n'a aucune precondition, false sinon
+     */
     public boolean aucunePrecond() {
         for (int i = 0; i < this.preconditions.length; i++) {
             if (preconditions[i] != 0)
@@ -57,16 +68,27 @@ public class Quete {
         return true;
     }
 
-    public int [] getPrecondition(String ligne) {
+    /**
+     * Methode qui retourne le numero de la quete
+     * @return la precondtion de la quete
+     */
+    public int [] getPrecondition() {
         return preconditions;
     }
 
-    public int [] getPosition(String ligne){ return position; }
+    public int [] getPosition(){ return position; }
 
     public int getNumero() { return numero; }
 
     public String toString() {
-        return numero + " [" + position[0] + "," + position[1] + "] [" + preconditions[0] + "," + preconditions[1] + "," + preconditions[2] +  "," + preconditions[3] + "] " + duree + " " + experience + " " + intitule;
+        return numero + " [" + position[0] + "," + position[1] + "] [" + "(" + preconditions[0] + "," + preconditions[1] + ")" + "," + "(" + preconditions[2] +  "," + preconditions[3] + ")" + "] " + duree + " " + experience + " " + intitule;
+    }
+    public int getExperience() {
+        return experience;
+    }
+
+    public int getDuree() {
+        return duree;
     }
 
 }

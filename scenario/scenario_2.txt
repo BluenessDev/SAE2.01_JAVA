@@ -1,0 +1,10 @@
+2|(2, 3)|()|4|100|explorer temple de Ssashara
+3|(0, 5)|((2,), (7,))|7|150|explorer forêt de Them Ulihm
+8|(2, 0)|((3, 7), (5, 1))|5|150|explorer steppe de Dhamedur
+7|(4, 4)|()|4|0|vaincre Roi maudit
+4|(2, 5)|((8, 5),)|4|200|explorer palais de Naghguruhm
+6|(3, 6)|()|5|100|explorer portail de Yeo Alari
+1|(6, 3)|((6,), (3, 2))|6|200|vaincre Homme-phalène
+9|(5, 0)|((7, 5), (8,))|7|150|dialoguer avec Iver le gardien des arbres
+5|(5, 2)|((6,),)|3|150|vaincre Calmar
+0|(5, 4)|((3, 6),)|7|1000|dialoguer avec Maeva la chasseresse de dragons

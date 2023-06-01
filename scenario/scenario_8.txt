@@ -1,0 +1,15 @@
+6|(194, 12)|((13, 8),)|8|200|explorer pic de Ummaneas
+10|(63, 145)|((9,), (6,))|8|250|vaincre Linnorm des falaises
+13|(100, 135)|((9,),)|4|200|vaincre Dragon métallique d'or
+14|(179, 111)|((9,),)|9|250|explorer repaire de Doccag Gegh
+12|(27, 175)|((9, 11), (14,))|10|350|explorer bois de Nighdarim
+3|(174, 128)|((10,), (9, 7))|11|350|explorer tombeau de Uzgashnug
+8|(169, 154)|((9, 13), (11,))|3|100|explorer étendue de Imysashys
+4|(175, 1)|((11, 10),)|13|350|dialoguer avec Seraphina la messagère des anges
+5|(34, 115)|((6, 14), (8,))|7|250|vaincre Esprit purulent
+9|(32, 17)|((11,),)|3|100|explorer lagon de Orkiggerd
+2|(2, 76)|((13,), (8,))|13|300|explorer désert de Iaena Taesi
+11|(186, 12)|()|5|100|explorer temple de Dod Dugnul
+1|(183, 153)|((2, 11), (8,))|10|350|vaincre Avoral
+7|(138, 46)|((5,),)|10|400|explorer bois de Vagdurahl
+0|(196, 79)|((7, 1), (9, 5))|9|2800|dialoguer avec Caspian le corsaire sans pitié

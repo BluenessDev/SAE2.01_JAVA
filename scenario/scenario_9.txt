@@ -1,0 +1,14 @@
+1|(19, 40)|((10, 8),)|3|300|vaincre Péryton
+11|(10, 34)|((13,),)|5|50|vaincre Dunagh
+3|(37, 19)|((12,), (11, 5))|16|400|vaincre Petit panda
+13|(42, 47)|()|1|0|explorer lac de Krur Drazzard
+5|(33, 33)|((12, 7),)|5|350|vaincre Ankylosaure
+7|(46, 37)|((13, 9),)|4|50|vaincre Momie des marais
+2|(3, 29)|((4,),)|9|200|explorer jardin de Ryranlion
+8|(25, 1)|((7,),)|6|100|explorer forêt de Felolion
+12|(2, 45)|((8,), (13,))|8|250|vaincre Mastodonte
+9|(1, 30)|((13,),)|1|150|vaincre Vrolikai
+4|(3, 36)|((7, 9),)|5|200|explorer complexe de Agh Valzurd
+6|(26, 26)|((7, 13),)|7|200|explorer plaine de Dhirgolir
+10|(37, 25)|((7, 4), (8, 2))|8|250|explorer pic de Khaghuz
+0|(19, 1)|((1,),)|15|1800|explorer labyrinthe de Bhecriz
