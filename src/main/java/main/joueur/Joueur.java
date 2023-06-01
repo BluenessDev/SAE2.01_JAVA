@@ -15,6 +15,9 @@ public class Joueur {
     private ArrayList<Quete> quetesRealisees = new ArrayList<>();
     private ArrayList<Integer> dejaTrouves = new ArrayList<>();
 
+    /**
+     * Constructeur de la classe Joueur
+     */
     public Joueur() {
         experience = 0;
         nombrePas = 0;
@@ -22,6 +25,10 @@ public class Joueur {
         position = new int[2];
     }
 
+    /**
+     * Constructeur de la classe Joueur avec parametre
+     * @param parScenario Scenario, le scenario du jeu
+     */
     public Joueur(Scenario parScenario) {
         experience = 0;
         nombrePas = 0;
@@ -38,22 +45,42 @@ public class Joueur {
         Joueur.experience = parExperience;
     }
 
+    /**
+     * Methode qui renoir l'experience du joueur
+     * @return experience int, l'experience du joueur
+     */
     public static int getExperience() {
         return experience;
     }
 
+    /**
+     * Methode qui definit le nombre de pas du joueur
+     * @return nombrePas int, le nombre de pas du joueur
+     */
     public static int getNombrePas() {
         return nombrePas;
     }
 
+    /**
+     * Methode qui renvoie le temps de jeu du joueur
+     * @return temps int, le temps du joueur
+     */
     public static int getTemps() {
         return temps;
     }
 
+    /**
+     * Methode qui definit la position du joueur
+     * @param parPos int[2], la position du joueur
+     */
     public void setPosition(int[] parPos){
         position = parPos;
     }
 
+    /**
+     * Methode qui renvoie la position du joueur
+     * @return position int[2], la position du joueur
+     */
     public int [] getPosition() {
         return position;
     }
@@ -84,6 +111,10 @@ public class Joueur {
         position = parQuete.getPosition();
     }
 
+    /**
+     * Methode qui renvoie la liste des quetes realisées
+     * @return quetesRealisees ArrayList<Quete>, la liste des quetes realisées
+     */
     public ArrayList<Quete> getQuetesRealisees() {
         return quetesRealisees;
     }
@@ -91,7 +122,7 @@ public class Joueur {
     /**
      * Methode qui renvoie la liste des quetes realisables
      */
-    public void Realisable() {
+    public void getRealisables() {
         quetesRealisees = new ArrayList<>();
         for (Quete quete : scenario.getStaticProvQuetes()) {
 
@@ -121,10 +152,19 @@ public class Joueur {
         }
     }
 
+    /**
+     * Methode qui permet de savoir si une quete est realisable
+     * @param parQuete Quete, la quete à realiser
+     * @return boolean, true si la quete est realisable, false sinon
+     */
     public boolean estRealisable(Quete parQuete) {;
         return quetesRealisees.contains(parQuete);
     }
 
+    /**
+     * Methode qui permet de savoir si la quete finale est realisable
+     * @return boolean, true si la quete finale est realisable, false sinon
+     */
     public boolean QueteFinaleRealisable() {
         ArrayList<Quete> listeQuete = getQuetesRealisees();
         for (Quete quete : listeQuete) {
@@ -135,6 +175,11 @@ public class Joueur {
         return false;
     }
 
+    /**
+     * Methode qui permet de recuperer la quete finale
+     * @param scenario Scenario, le scenario du jeu
+     * @return Quete, la quete finale
+     */
     public Quete getQueteFinale(Scenario scenario) {
         ArrayList<Quete> listeQuete = scenario.getStaticProvQuetes();
         for (Quete quete : listeQuete) {
@@ -145,7 +190,12 @@ public class Joueur {
         return null;
     }
 
-    public Quete queteProche(ArrayList<Quete> parListe) {
+    /**
+     * Methode qui permet de recuperer la quete la plus proche
+     * @param parListe ArrayList<Quete>, la liste des quetes
+     * @return Quete, la quete la plus proche
+     */
+    public Quete quetePlusProche(ArrayList<Quete> parListe) {
         int distance = 100000; // valeur arbitraire
         Quete quetesPlusProches = null;
         for (Quete quete : parListe) {

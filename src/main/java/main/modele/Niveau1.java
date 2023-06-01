@@ -3,7 +3,6 @@ package main.modele;
 import main.joueur.Joueur;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 
 public class Niveau1 {
 
@@ -29,14 +28,14 @@ public class Niveau1 {
         Quete quete0 = joueur.getQueteFinale(scenario);
         boolean queteRealisee = false;
         while (!joueur.QueteFinaleRealisable()) {
-            joueur.Realisable();
+            joueur.getRealisables();
             System.out.println(joueur.getQuetesRealisees().size());
             queteRealisee = false; // Initialiser la variable de contrôle
 
             for (Quete quete : scenarioProvQuetes) {
                 if (joueur.estRealisable(quete)) {
                     if (joueur.getQuetesRealisees().size() > 1) {
-                        quete = joueur.queteProche(joueur.getQuetesRealisees());
+                        quete = joueur.quetePlusProche(joueur.getQuetesRealisees());
                     }
                     joueur.realiserQuete(quete);
                     chemin.add(quete);
@@ -67,7 +66,7 @@ public class Niveau1 {
         Quete quete0 = joueur.getQueteFinale(scenario);
         boolean queteRealisee = false;
         while (!scenarioProvQuetes.isEmpty()) {
-            joueur.Realisable();
+            joueur.getRealisables();
             System.out.println(joueur.getQuetesRealisees().size());
             queteRealisee = false; // Initialiser la variable de contrôle
             for (Quete quete : scenarioProvQuetes) {
@@ -77,7 +76,7 @@ public class Niveau1 {
                 }
                 else if (joueur.estRealisable(quete)) {
                     if (joueur.getQuetesRealisees().size() > 1) {
-                        quete = joueur.queteProche(sans0);
+                        quete = joueur.quetePlusProche(sans0);
                     }
                     joueur.realiserQuete(quete);
                     chemin.add(quete);
