@@ -7,12 +7,12 @@ import java.util.ArrayList;
 
 public class Joueur {
 
-    private static int experience;
-    private static int nombrePas;
-    private static int temps;
+    private int experience;
+    private int nombrePas;
+    private int temps;
     private int[] position;
-    private static Scenario scenario;
-    private ArrayList<Quete> quetesRealisees = new ArrayList<>();
+    private Scenario scenario;
+    private ArrayList<Quete> quetesRealisables = new ArrayList<>();
     private ArrayList<Integer> dejaTrouves = new ArrayList<>();
 
     /**
@@ -36,20 +36,34 @@ public class Joueur {
         position = new int[2];
     }
 
-
     /**
-     * Methode qui definit l'experience du joueur
-     *@param parExperience int, l'experience du joueur
+     * Methode qui definit les quetes réalisables pour le joueur
+     * @param quetesRealisables ArrayList, les quetes realisables par le joueur
      */
-    public static void setExperience(int parExperience) {
-        Joueur.experience = parExperience;
+    public void setQuetesRealisables(ArrayList<Quete> quetesRealisables) {
+        this.quetesRealisables = quetesRealisables;
     }
 
+    /**
+     * Methode qui reinitalise les statistiques du joueur
+     */
+    public void reinitialiserJoueur() {
+        experience = 0;
+        setTemps(0);
+        setPosition(new int [2]);
+        nombrePas = 0;
+        setQuetesRealisables(new ArrayList<>());
+        dejaTrouves = new ArrayList<>();
+    }
+
+    public void setTemps(int parTemps){
+        temps = parTemps;
+    }
     /**
      * Methode qui renoir l'experience du joueur
      * @return experience int, l'experience du joueur
      */
-    public static int getExperience() {
+    public int getExperience() {
         return experience;
     }
 
@@ -57,7 +71,7 @@ public class Joueur {
      * Methode qui definit le nombre de pas du joueur
      * @return nombrePas int, le nombre de pas du joueur
      */
-    public static int getNombrePas() {
+    public int getNombrePas() {
         return nombrePas;
     }
 
@@ -65,7 +79,7 @@ public class Joueur {
      * Methode qui renvoie le temps de jeu du joueur
      * @return temps int, le temps du joueur
      */
-    public static int getTemps() {
+    public int getTemps() {
         return temps;
     }
 
@@ -103,30 +117,53 @@ public class Joueur {
      */
     public void realiserQuete(Quete parQuete) {
         dejaTrouves.add(parQuete.getNumero());
-        experience += parQuete.getExperience();
-        temps += parQuete.getDuree() + compareDistance(parQuete.getPosition());
-        quetesRealisees.add(parQuete);
-        nombrePas += compareDistance(parQuete.getPosition());
-        System.out.println(nombrePas);
-        position = parQuete.getPosition();
+        if (parQuete.getNumero() != 0 ){
+            experience += parQuete.getExperience();
+        }
+        temps += parQuete.getDuree() + compareDistance(parQuete.getPositionQuete());
+        quetesRealisables.add(parQuete);
+        nombrePas += compareDistance(parQuete.getPositionQuete());
+        //System.out.println(nombrePas);
+        position[0] = parQuete.getPositionQuete()[0];
+        position[1] = parQuete.getPositionQuete()[1];
+    }
+
+    /**
+     * Methode qui permet d'annuler la realisation d'une quete
+     * @param parQuete Quete, la quete à annuler
+     */
+    public void annulerRealisationQuete(Quete parQuete) {
+        for (int i = 0; i < dejaTrouves.size()-1; i++){
+            if (dejaTrouves.get(i).equals(parQuete.getNumero())) {
+                dejaTrouves.remove(i);
+            }
+        }
+        if (parQuete.getNumero() != 0 ){
+            experience -= parQuete.getExperience();
+        }
+        temps = temps - (parQuete.getDuree() - (2*compareDistance(parQuete.getPositionQuete())));
+        quetesRealisables.remove(parQuete);
+        nombrePas = nombrePas - compareDistance(parQuete.getPositionQuete());
+        position[0] = position[0] - parQuete.getPositionQuete()[0];
+        position[1] = position[1] - parQuete.getPositionQuete()[1];
     }
 
     /**
      * Methode qui renvoie la liste des quetes realisées
-     * @return quetesRealisees ArrayList<Quete>, la liste des quetes realisées
+     * @return quetesRealisees ArrayList, la liste des quetes realisées
      */
-    public ArrayList<Quete> getQuetesRealisees() {
-        return quetesRealisees;
+    public ArrayList<Quete> getQuetesRealisables() {
+        return quetesRealisables;
     }
 
     /**
      * Methode qui renvoie la liste des quetes realisables
      */
     public void getRealisables() {
-        quetesRealisees = new ArrayList<>();
+        quetesRealisables = new ArrayList<>();
         for (Quete quete : scenario.getStaticProvQuetes()) {
 
-            if (!quetesRealisees.contains(quete)) {
+            if (!quetesRealisables.contains(quete)) {
                 if (quete.aucunePrecond()) {
                     quetesRealisees.add(quete);
                 } else {
@@ -145,7 +182,7 @@ public class Joueur {
                         preconditions2 = true;
                     }
                     if (preconditions1 && preconditions2) {
-                        quetesRealisees.add(quete);
+                        quetesRealisables.add(quete);
                     }
                 }
             }
@@ -158,17 +195,31 @@ public class Joueur {
      * @return boolean, true si la quete est realisable, false sinon
      */
     public boolean estRealisable(Quete parQuete) {;
-        return quetesRealisees.contains(parQuete);
+        return quetesRealisables.contains(parQuete);
     }
 
     /**
      * Methode qui permet de savoir si la quete finale est realisable
      * @return boolean, true si la quete finale est realisable, false sinon
      */
-    public boolean QueteFinaleRealisable() {
-        ArrayList<Quete> listeQuete = getQuetesRealisees();
+    public boolean queteFinaleRealisable() {
+        ArrayList<Quete> listeQuete = getQuetesRealisables();
         for (Quete quete : listeQuete) {
             if (quete.getNumero() == 0 && experience >= quete.getExperience()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Methode qui permet de savoir si la quete finale est realisable sans prendre en compte l'experience
+     * @return boolean, true si la quete finale est realisable sans prendre en compte l'experience, false sinon
+     */
+    public boolean queteFinaleRealisableSansXp() {
+        ArrayList<Quete> listeQuete = getQuetesRealisables();
+        for (Quete quete : listeQuete) {
+            if (quete.getNumero() == 0) {
                 return true;
             }
         }
@@ -192,19 +243,18 @@ public class Joueur {
 
     /**
      * Methode qui permet de recuperer la quete la plus proche
-     * @param parListe ArrayList<Quete>, la liste des quetes
+     * @param parListe ArrayList, la liste des quetes
      * @return Quete, la quete la plus proche
      */
     public Quete quetePlusProche(ArrayList<Quete> parListe) {
         int distance = 100000; // valeur arbitraire
         Quete quetesPlusProches = null;
         for (Quete quete : parListe) {
-            if (compareDistance(quete.getPosition()) < distance) {
-                distance = compareDistance(quete.getPosition());
+            if (compareDistance(quete.getPositionQuete()) < distance) {
+                distance = compareDistance(quete.getPositionQuete());
                 quetesPlusProches = quete;
             }
         }
-        System.out.println("Plus proche " + quetesPlusProches.toString());
         return quetesPlusProches;
     }
 
