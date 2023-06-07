@@ -1,17 +1,20 @@
-package main.modele;
+package main.niveaux;
 
 import main.joueur.Joueur;
+import main.modele.Quete;
+import main.modele.Scenario;
 
 import java.util.ArrayList;
 
 public class Niveau1 {
 
-    private static Joueur joueur;;
+    private static Joueur joueur;
     private static Scenario scenario;
 
     /**
      * Constructeur de la classe Niveau1
-     * @param parScenario le scenario du jeu
+     *
+     * @param parScenario Scenario, le scenario du jeu
      */
     public Niveau1(Scenario parScenario) {
         joueur = new Joueur(parScenario);
@@ -19,23 +22,23 @@ public class Niveau1 {
     }
 
     /**
-     * Methode qui retourne le chemin le plus efficace pour finir le scenario
-     * @return le chemin le plus efficace pour finir le jeu
+     * Methode gloutonne qui retourne le chemin le plus efficace pour finir le scenario
+     *
+     * @return ArrayList, le chemin le plus efficace pour finir le jeu
      */
-    public ArrayList<Quete> cheminEfficace(){
+    public ArrayList<Quete> cheminEfficace() {
         ArrayList<Quete> chemin = new ArrayList<>();
         ArrayList<Quete> scenarioProvQuetes = scenario.getStaticProvQuetes();
         Quete quete0 = joueur.getQueteFinale(scenario);
-        boolean queteRealisee = false;
-        while (!joueur.QueteFinaleRealisable()) {
+        boolean queteRealisee;
+        while (!joueur.queteFinaleRealisable()) {
             joueur.getRealisables();
-            System.out.println(joueur.getQuetesRealisees().size());
             queteRealisee = false; // Initialiser la variable de contrôle
 
             for (Quete quete : scenarioProvQuetes) {
                 if (joueur.estRealisable(quete)) {
-                    if (joueur.getQuetesRealisees().size() > 1) {
-                        quete = joueur.quetePlusProche(joueur.getQuetesRealisees());
+                    if (joueur.getQuetesRealisables().size() > 1) {
+                        quete = joueur.quetePlusProche(joueur.getQuetesRealisables());
                     }
                     joueur.realiserQuete(quete);
                     chemin.add(quete);
@@ -51,31 +54,29 @@ public class Niveau1 {
             }
 
         }
-        joueur.realiserQuete(quete0);
-        chemin.add(quete0);
         return chemin;
     }
 
     /**
-     * Methode qui retourne le chemin pour finir le scenario
-     * @return le chemin pour finir le jeu
+     * Methode gloutonne qui retourne le chemin pour finir le scenario a 100%
+     *
+     * @return ArrayList, le chemin pour finir le jeu
      */
     public ArrayList<Quete> cheminExhaustif() {
         ArrayList<Quete> chemin = new ArrayList<>();
         ArrayList<Quete> scenarioProvQuetes = scenario.getStaticProvQuetes();
         Quete quete0 = joueur.getQueteFinale(scenario);
-        boolean queteRealisee = false;
+        boolean queteRealisee;
         while (!scenarioProvQuetes.isEmpty()) {
             joueur.getRealisables();
-            System.out.println(joueur.getQuetesRealisees().size());
+            System.out.println(joueur.getQuetesRealisables().size());
             queteRealisee = false; // Initialiser la variable de contrôle
             for (Quete quete : scenarioProvQuetes) {
-                ArrayList<Quete> sans0 = joueur.getQuetesRealisees();
+                ArrayList<Quete> sans0 = joueur.getQuetesRealisables();
                 if (sans0.contains(quete0)) {
                     sans0.remove(quete0);
-                }
-                else if (joueur.estRealisable(quete)) {
-                    if (joueur.getQuetesRealisees().size() > 1) {
+                } else if (joueur.estRealisable(quete)) {
+                    if (joueur.getQuetesRealisables().size() > 1) {
                         quete = joueur.quetePlusProche(sans0);
                     }
                     joueur.realiserQuete(quete);

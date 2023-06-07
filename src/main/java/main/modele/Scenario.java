@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Scenario {
 
-    ArrayList<Quete> staticProvQuetes;
+    private ArrayList<Quete> staticProvQuetes;
 
     public Scenario() {
         staticProvQuetes = new ArrayList<>();

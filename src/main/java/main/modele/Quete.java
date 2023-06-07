@@ -1,7 +1,5 @@
 package main.modele;
 
-import main.joueur.Joueur;
-
 import java.util.*;
 
 public class Quete {
@@ -9,7 +7,7 @@ public class Quete {
 
     String pos;
 
-    int [] position = new int[2];
+    int [] positionQuete = new int[2];
 
     String precond;
 
@@ -35,7 +33,7 @@ public class Quete {
             Scanner scanPos = new Scanner(pos).useDelimiter(",");
             int i = 0;
             while (scanPos.hasNext()) {
-                position[i] = Integer.parseInt(scanPos.next());
+                positionQuete[i] = Integer.parseInt(scanPos.next());
                 i++;
             }
             String precond = scanner.next();
@@ -76,17 +74,26 @@ public class Quete {
         return preconditions;
     }
 
-    public int [] getPosition(){ return position; }
+    public int [] getPositionQuete(){ return positionQuete; }
 
     public int getNumero() { return numero; }
 
     public String toString() {
-        return numero + " [" + position[0] + "," + position[1] + "] [" + "(" + preconditions[0] + "," + preconditions[1] + ")" + "," + "(" + preconditions[2] +  "," + preconditions[3] + ")" + "] " + duree + " " + experience + " " + intitule;
+        return numero + " [" + positionQuete[0] + "," + positionQuete[1] + "] [" + "(" + preconditions[0] + "," + preconditions[1] + ")" + "," + "(" + preconditions[2] +  "," + preconditions[3] + ")" + "] " + duree + " " + experience + " " + intitule;
     }
+
+    /**
+     * Methode qui retourne l'intitule de la quete
+     * @return int, l'experience de la quete
+     */
     public int getExperience() {
         return experience;
     }
 
+    /**
+     * Methode qui retourne la duree de la quete
+     * @return int, la duree de la quete
+     */
     public int getDuree() {
         return duree;
     }
