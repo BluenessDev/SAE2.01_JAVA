@@ -18,7 +18,7 @@ Ce projet respecte le modèle MVC (Modèle Vue Controleur).
 
 ## Comment utiliser ?
 
-Pour lancer l'application, il faut compiler et executer le fichier java [VueApplication](src/main/java/main/client/ClientLectureScenario.java) dans le répertoire client, il faudra cependant modifier le code afin de choisir entre le scenario 1, le scenario 2 ou si vous voulez un chemin efficace ou exaustif.
+Pour lancer l'application, il faut compiler et executer le fichier java [ClientLectureScenario](src/main/java/main/client/ClientLectureScenario.java) dans le répertoire client, il faudra cependant modifier le code afin de choisir entre le scenario 1, le scenario 2 ou si vous voulez un chemin efficace ou exaustif.
 
 ## Crédits
 
